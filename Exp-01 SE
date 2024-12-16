@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+double calculateFocus(double a, double b, double c, double x) {
+    return a * pow(x, 2) + b * x + c;
+}
+
+void classifyFocus(double focus) {
+    if (focus < 20) {
+        printf("Focus Level: Poor - Try taking a break or reducing distractions.\n");
+    } else if (focus < 60) {
+        printf("Focus Level: Average - You're doing okay, but there's room for improvement.\n");
+    } else {
+        printf("Focus Level: High - Great job! Keep up the focus.\n");
+    }
+}
+
+int main() {
+    double a = 0.5;
+    double b = 2.0;
+    double c = 5.0;
+    double x = 4.0;
+
+    printf("Welcome to the MindfulSpace Focus Level Calculator\n");
+    printf("The formula is: Focus Level = ax^2 + bx + c\n");
+    printf("\nUsing predefined values:\n");
+    printf("Intensity factor (a): %.2lf\n", a);
+    printf("Time factor (b): %.2lf\n", b);
+    printf("Environment factor (c): %.2lf\n", c);
+    printf("Task Difficulty (x): %.2lf\n", x);
+
+    double focus = calculateFocus(a, b, c, x);
+    printf("\nThe calculated focus level is: %.2lf\n", focus);
+    classifyFocus(focus);
+
+    printf("Thank you for using the MindfulSpace Focus Level Calculator!\n");
+
+    return 0;
+}
